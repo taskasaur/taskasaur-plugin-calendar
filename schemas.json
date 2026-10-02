@@ -1,0 +1,205 @@
+[
+  {
+    "id": "calendar",
+    "pluginId": "calendar",
+    "name": "Calendar",
+    "version": 1,
+    "fields": [
+      {
+        "id": "uid",
+        "label": "UID",
+        "pgType": "text",
+        "required": true,
+        "nullable": false,
+        "array": false,
+        "sensitive": false
+      },
+      {
+        "id": "dtstamp",
+        "label": "DTSTAMP",
+        "pgType": "timestamp with time zone",
+        "required": true,
+        "nullable": false,
+        "array": false,
+        "sensitive": false
+      },
+      {
+        "id": "dtstart",
+        "label": "DTSTART",
+        "pgType": "text",
+        "required": true,
+        "nullable": false,
+        "array": false,
+        "sensitive": false
+      },
+      {
+        "id": "summary",
+        "label": "Title",
+        "pgType": "text",
+        "required": false,
+        "nullable": true,
+        "array": false,
+        "sensitive": false
+      },
+      {
+        "id": "description",
+        "label": "Description",
+        "pgType": "text",
+        "required": false,
+        "nullable": true,
+        "array": false,
+        "control": "textarea",
+        "sensitive": false
+      },
+      {
+        "id": "dtend",
+        "label": "End",
+        "pgType": "text",
+        "required": false,
+        "nullable": true,
+        "array": false,
+        "sensitive": false
+      },
+      {
+        "id": "duration",
+        "label": "Duration",
+        "pgType": "interval",
+        "required": false,
+        "nullable": true,
+        "array": false,
+        "sensitive": false
+      },
+      {
+        "id": "timezone",
+        "label": "Time zone",
+        "pgType": "text",
+        "required": false,
+        "nullable": true,
+        "array": false,
+        "sensitive": false
+      },
+      {
+        "id": "location",
+        "label": "Location",
+        "pgType": "text",
+        "required": false,
+        "nullable": true,
+        "array": false,
+        "sensitive": false
+      },
+      {
+        "id": "rrule",
+        "label": "Recurrence rule",
+        "pgType": "text",
+        "required": false,
+        "nullable": true,
+        "array": false,
+        "sensitive": false
+      },
+      {
+        "id": "exdates",
+        "label": "Exceptions",
+        "pgType": "jsonb",
+        "required": false,
+        "nullable": true,
+        "array": false,
+        "default": [],
+        "sensitive": false
+      },
+      {
+        "id": "rdates",
+        "label": "Additional dates",
+        "pgType": "jsonb",
+        "required": false,
+        "nullable": true,
+        "array": false,
+        "default": [],
+        "sensitive": false
+      },
+      {
+        "id": "recurrence_id",
+        "label": "Recurrence instance",
+        "pgType": "text",
+        "required": false,
+        "nullable": true,
+        "array": false,
+        "sensitive": false
+      },
+      {
+        "id": "attendees",
+        "label": "Attendees",
+        "pgType": "jsonb",
+        "required": false,
+        "nullable": true,
+        "array": false,
+        "default": [],
+        "sensitive": false
+      },
+      {
+        "id": "alarms",
+        "label": "Embedded iCalendar alarms",
+        "pgType": "jsonb",
+        "required": false,
+        "nullable": true,
+        "array": false,
+        "default": [],
+        "sensitive": false
+      },
+      {
+        "id": "organizer",
+        "label": "Organizer",
+        "pgType": "text",
+        "required": false,
+        "nullable": true,
+        "array": false,
+        "sensitive": false
+      },
+      {
+        "id": "url",
+        "label": "URL",
+        "pgType": "text",
+        "required": false,
+        "nullable": true,
+        "array": false,
+        "control": "url",
+        "sensitive": false
+      },
+      {
+        "id": "sequence",
+        "label": "Sequence",
+        "pgType": "integer",
+        "required": false,
+        "nullable": true,
+        "array": false,
+        "min": 0,
+        "default": 0,
+        "sensitive": false
+      },
+      {
+        "id": "transp",
+        "label": "Availability",
+        "pgType": "text",
+        "required": true,
+        "nullable": false,
+        "array": false,
+        "choices": ["OPAQUE", "TRANSPARENT"],
+        "default": "OPAQUE",
+        "control": "select",
+        "sensitive": false
+      },
+      {
+        "id": "status",
+        "label": "Status",
+        "pgType": "text",
+        "required": true,
+        "nullable": false,
+        "array": false,
+        "choices": ["CONFIRMED", "TENTATIVE", "CANCELLED"],
+        "default": "CONFIRMED",
+        "control": "select",
+        "sensitive": false
+      }
+    ],
+    "standard": "ical-event"
+  }
+]

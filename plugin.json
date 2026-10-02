@@ -1,0 +1,62 @@
+{
+  "id": "calendar",
+  "name": "Calendar",
+  "description": "Events, recurrence, and standards-based calendar import/export.",
+  "version": "1.0.0",
+  "platformApi": "^1.0.0",
+  "fieldSchemaApi": "^1.0.0",
+  "publisher": "taskasaur",
+  "license": "GPL-3.0-only",
+  "entrypoints": {
+    "browser": "browser.mjs"
+  },
+  "ui": {
+    "mode": "shared",
+    "apiVersion": "^1.0.0",
+    "surfaces": ["calendar"]
+  },
+  "storage": {
+    "local": {
+      "mode": "dexie",
+      "collections": ["calendar"]
+    }
+  },
+  "permissions": ["calendar.read", "calendar.write"],
+  "dependencies": [],
+  "features": {},
+  "sharedServices": [
+    {
+      "id": "core.records",
+      "version": "^1",
+      "optional": false
+    },
+    {
+      "id": "core.ui",
+      "version": "^1",
+      "optional": false
+    },
+    {
+      "id": "core.workspace",
+      "version": "^1",
+      "optional": false
+    },
+    {
+      "id": "core.sync",
+      "version": "^1",
+      "optional": false
+    },
+    {
+      "id": "core.storage.local",
+      "version": "^1",
+      "optional": false
+    }
+  ],
+  "provides": {
+    "commands": ["calendar.list", "calendar.put", "calendar.delete"],
+    "events": ["calendar.changed"]
+  },
+  "consumes": {
+    "commands": ["reminders.list", "reminders.put", "reminders.delete"],
+    "events": []
+  }
+}
